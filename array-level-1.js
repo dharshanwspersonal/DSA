@@ -48,14 +48,26 @@ function findSecondLargest(arr) {
 
     return secondLargest;
 }
-console.log(findSecondLargest([12, 35, 1, 10, 34, 1]));
 
 // 4. Find the second smallest element
 // Sample Input:  [12, 35, 1, 10, 34, 1]
 // Sample Output: 10
 function findSecondSmallest(arr) {
-  // Your code here
+   let smallest = Infinity;
+    let secondsmallest = Infinity;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < smallest) {
+            secondsmallest = smallest;
+            smallest = arr[i];
+        } else if (arr[i] < secondsmallest && arr[i] !== smallest) {
+            secondsmallest = arr[i];
+        }
+    }
+
+    return secondsmallest;
 }
+console.log(findSecondSmallest([12, 35, 1, 10, 34, 1]));
 
 // 5. Sum of all elements
 // Sample Input:  [1, 2, 3, 4, 5]
